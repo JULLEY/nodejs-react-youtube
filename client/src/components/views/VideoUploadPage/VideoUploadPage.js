@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Typography, Button, Form, message, Input, Icon } from "antd";
 import Dropzone from "react-dropzone";
 
@@ -6,6 +6,11 @@ const { TextArea } = Input;
 const { Title } = Typography;
 
 function VideoUploadPage() {
+
+  const [VideoTitle, setVideoTitle] = useState("")
+  const [Description, setDescription] = useState("")
+  const [Private, setPrivate] = useState(0)
+  const [Category, setCategory] = useState("Film & Animation")
   return (
     <div style={{ maxWidth: "700px", margin: "2rem auto" }}>
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
@@ -43,11 +48,11 @@ function VideoUploadPage() {
         <br />
         <br />
         <label>Title</label>
-        <Input onChange value />
+        <Input onChange value={VideoTitle} />
         <br />
         <br />
         <label>Description</label>
-        <TextArea onChange value />
+        <TextArea onChange value={Description} />
 
         <br />
         <br />
